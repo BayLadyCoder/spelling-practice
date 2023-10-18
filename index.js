@@ -8,6 +8,7 @@ const practiceArea = document.getElementById('practice-area');
 const selectedTopic = document.getElementById('selected-topic');
 const wordInfo = document.getElementById('word-info');
 const voiceSelect = document.getElementById('voice-select');
+const voiceOptionSection = document.getElementById('voice-option-section');
 
 // word navigator buttons
 const playButton = document.getElementById('play-btn');
@@ -71,11 +72,14 @@ let americanVoices = [];
 const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
 voicesPromise.then((voices) => {
-  americanVoices = voices.filter((voice) => voice.lang === 'en-US');
   if (isSafari) {
-    americanVoices.reverse();
+    voiceOptionSection.style.display = 'none';
+    return;
   }
 
+  americanVoices = voices.filter(
+    (voice) => voice.lang === 'en-US' && voice.localService
+  );
   utterance.voice = americanVoices[0];
 
   // set up voice options
