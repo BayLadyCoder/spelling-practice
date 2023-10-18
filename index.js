@@ -67,14 +67,14 @@ function getSpeechVoices() {
 }
 
 const voicesPromise = getSpeechVoices();
-let allVoices = [];
+let americanVoices = [];
 
 voicesPromise.then((voices) => {
-  utterance.voice = voices[0];
-  allVoices = voices;
+  americanVoices = voices.filter((voice) => voice.lang === 'en-US');
+  utterance.voice = americanVoices[0];
 
   // set up voice options
-  voices.forEach((voice) => {
+  americanVoices.forEach((voice) => {
     const option = document.createElement('option');
     option.textContent = `${voice.name} (${voice.lang})`;
 
@@ -90,7 +90,7 @@ voicesPromise.then((voices) => {
 
 voiceSelect.addEventListener('change', function (e) {
   const voiceName = e.target.options[e.target.selectedIndex].dataset.name;
-  utterance.voice = allVoices.find((voice) => voice.name === voiceName);
+  utterance.voice = americanVoices.find((voice) => voice.name === voiceName);
 });
 // ============ END SpeechSynthesis set up ============
 
