@@ -78,10 +78,6 @@ voicesPromise.then((voices) => {
     const option = document.createElement('option');
     option.textContent = `${voice.name} (${voice.lang})`;
 
-    if (voice.default) {
-      option.textContent += ' — DEFAULT';
-    }
-
     option.dataset.lang = voice.lang;
     option.dataset.name = voice.name;
     voiceSelect.appendChild(option);
