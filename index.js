@@ -68,18 +68,23 @@ function getSpeechVoices() {
 
 const voicesPromise = getSpeechVoices();
 let americanVoices = [];
+const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
 voicesPromise.then((voices) => {
   americanVoices = voices.filter((voice) => voice.lang === 'en-US');
+  if (isSafari) {
+    americanVoices.reverse();
+  }
+
   utterance.voice = americanVoices[0];
 
   // set up voice options
   americanVoices.forEach((voice) => {
     const option = document.createElement('option');
-    option.textContent = `${voice.name} (${voice.lang})`;
 
-    option.dataset.lang = voice.lang;
+    option.textContent = voice.name;
     option.dataset.name = voice.name;
+
     voiceSelect.appendChild(option);
   });
 });
