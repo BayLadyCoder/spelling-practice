@@ -1,4 +1,5 @@
 import { wordsByCategory } from './data.js';
+import { getSpeechVoices } from './helpers.js';
 
 // Start Area
 const categoryList = document.getElementById('category-list');
@@ -51,21 +52,6 @@ Object.entries(wordsByCategory).forEach(([group, words]) => {
 
 // ============ START SpeechSynthesis set up ============
 const utterance = new SpeechSynthesisUtterance();
-
-// todo: move to helpers file
-function getSpeechVoices() {
-  return new Promise(function (resolve, reject) {
-    let synth = window.speechSynthesis;
-    let id;
-
-    id = setInterval(() => {
-      if (synth.getVoices().length !== 0) {
-        resolve(synth.getVoices());
-        clearInterval(id);
-      }
-    }, 10);
-  });
-}
 
 const voicesPromise = getSpeechVoices();
 let americanVoices = [];
