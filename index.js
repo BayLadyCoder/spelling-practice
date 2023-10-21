@@ -36,9 +36,12 @@ let currentWordIndex = 0;
 
 // Set up category list
 Object.entries(wordsByCategory).forEach(([group, words]) => {
+  // Create button for each category and append it to the list
   const button = document.createElement('button');
-
   button.textContent = group;
+  categoryList.appendChild(button);
+
+  // register onClick handler for each button
   button.addEventListener('click', () => {
     selectedTopic.textContent = `Category: ${group}`;
     practiceArea.style.display = 'block';
@@ -46,8 +49,6 @@ Object.entries(wordsByCategory).forEach(([group, words]) => {
     currentWordIndex = 0;
     wordInfo.textContent = `${currentWordIndex + 1}/${wordsToPlay.length}`;
   });
-
-  categoryList.appendChild(button);
 });
 
 // ============ START SpeechSynthesis set up ============
