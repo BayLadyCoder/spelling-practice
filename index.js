@@ -28,18 +28,21 @@ let currentWordIndex = 0;
 // todo: submit function
 const submitBtn = document.getElementById('validateCurrentWord');
 
-submitBtn.addEventListener('click',()=>{
-  const wordEnterByUser = document.getElementById('wordToCheck').value.toLowerCase();
-  
-  const currentWord = wordsToPlay[currentWordIndex].toLowerCase();
-  
-  if (currentWord == wordEnterByUser) 
-  {
-    alert("That's right spelling 🥳");
-  } else {
-    alert("That's wrong spelling,Please try again 💐");
-  }
-});
+if (submitBtn != null) {
+  submitBtn.addEventListener("click", () => {
+    const wordEnterByUser = document
+      .getElementById("wordToCheck")
+      .value.toLowerCase();
+
+    const currentWord = wordsToPlay[currentWordIndex].toLowerCase();
+
+    if (currentWord == wordEnterByUser) {
+      alert("That's right spelling 🥳");
+    } else {
+      alert("That's wrong spelling,Please try again 💐");
+    }
+  });
+}
 
 // todo: submit on Enter
 // todo: show answer after submit
