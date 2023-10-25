@@ -24,9 +24,9 @@ let wordsToPlay = [];
 let currentWordIndex = 0;
 
 // todo: add shuffle button
-
 // todo: submit function
-const submitBtn = document.getElementById('validateCurrentWord');
+
+const submitBtn = document.getElementById("validateCurrentWord");
 submitBtn.addEventListener("click", () => {
   const wordEnterByUser = document.getElementById("wordToCheck").value.toLowerCase();
   const currentWord = wordsToPlay[currentWordIndex].toLowerCase();
