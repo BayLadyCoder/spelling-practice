@@ -10,7 +10,8 @@ const selectedTopic = document.getElementById('selected-topic');
 const wordInfo = document.getElementById('word-info');
 const voiceSelect = document.getElementById('voice-select');
 const voiceOptionSection = document.getElementById('voice-option-section');
-
+const checkText = document.querySelector('#checkText');
+const checkBtn = document.querySelector('#checkBtn');
 // word navigator buttons
 const playButton = document.getElementById('play-btn');
 const prevButton = document.getElementById('prev-btn');
@@ -24,8 +25,36 @@ let wordsToPlay = [];
 let currentWordIndex = 0;
 
 // todo: add shuffle button
+
 // todo: submit function
 // todo: submit on Enter
+const compareWords = () => {
+  const checkWord = wordsToPlay[currentWordIndex].toLowerCase();
+  let checkCurentIndex = currentWordIndex;
+  const userWord = checkText.value.toLowerCase();
+
+  if(wordsToPlay.length !== ++checkCurentIndex) {
+    if(checkWord === userWord) {
+      console.info('good compare');
+      nextButton.click();
+      playButton.click();
+    } else {
+      console.error('bad compare');
+    }
+  } else {
+    console.log('Excellent. Choose the next category.');
+  }
+}
+
+const submitClick = () => compareWords();
+const enterClick = (e) => {
+  if(e.code === 'Enter') {
+    compareWords();
+  }
+}
+
+document.addEventListener('keyup', enterClick)
+checkBtn.addEventListener('click', submitClick);
 // todo: show answer after submit
 // todo: scoring
 // todo: filter words
@@ -48,6 +77,7 @@ Object.entries(wordsByCategory).forEach(([group, words]) => {
     wordsToPlay = words;
     currentWordIndex = 0;
     wordInfo.textContent = `${currentWordIndex + 1}/${wordsToPlay.length}`;
+    checkText.value = "";
   });
 });
 
