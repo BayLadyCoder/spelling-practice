@@ -28,7 +28,7 @@ let currentWordIndex = 0;
 
 const submitBtn = document.getElementById("validate_current_word");
 submitBtn.addEventListener("click", () => {
-  const wordEnterByUser = document.getElementById("wordToCheck").value;
+  const wordEnterByUser = document.getElementById("word_to_check").value;
   const currentWord = wordsToPlay[currentWordIndex];
   if (currentWord == wordEnterByUser) {
     alert("That's right spelling 🥳");
