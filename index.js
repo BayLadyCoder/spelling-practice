@@ -26,14 +26,14 @@ let currentWordIndex = 0;
 // todo: add shuffle button
 // todo: submit function
 
-const submitBtn = document.getElementById("validateCurrentWord");
+const submitBtn = document.getElementById("validate_current_word");
 submitBtn.addEventListener("click", () => {
-  const wordEnterByUser = document.getElementById("wordToCheck").value.toLowerCase();
-  const currentWord = wordsToPlay[currentWordIndex].toLowerCase();
+  const wordEnterByUser = document.getElementById("wordToCheck").value;
+  const currentWord = wordsToPlay[currentWordIndex];
   if (currentWord == wordEnterByUser) {
     alert("That's right spelling 🥳");
   } else {
-    alert("That's wrong spelling,Please try again 💐");
+    alert("That's wrong spelling. Please try again 💐");
   }
 });
 
