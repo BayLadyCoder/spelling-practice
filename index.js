@@ -26,9 +26,9 @@ let currentWordIndex = 0;
 // todo: add shuffle button
 // todo: submit function
 
-const submitBtn = document.getElementById("validate_current_word");
-submitBtn.addEventListener("click", () => {
-  const wordEnterByUser = document.getElementById("word_to_check").value;
+const submitBtn = document.getElementById('validate-current-word');
+submitBtn.addEventListener('click', () => {
+  const wordEnterByUser = document.getElementById('word-to-check').value;
   const currentWord = wordsToPlay[currentWordIndex];
   if (currentWord == wordEnterByUser) {
     alert("That's right spelling 🥳");
