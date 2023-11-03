@@ -51,6 +51,8 @@ Object.entries(wordsByCategory).forEach(([group, words]) => {
   // Create button for each category and append it to the list
   const button = document.createElement('button');
   button.textContent = group;
+  button.classList.add('btn');
+  button.classList.add('btn-outline-light');
   categoryList.appendChild(button);
 
   // register onClick handler for each button

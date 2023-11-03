@@ -1,6 +1,6 @@
 body {
-  background-color: rgb(27, 27, 27);
-  color: white;
+  /* background-color: rgb(27, 27, 27); */
+  /* color: white; */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,8 +10,4 @@ body {
 hr {
   width: 50%;
   margin-top: 30px;
-}
-
-button {
-  padding: 10px;
 }
