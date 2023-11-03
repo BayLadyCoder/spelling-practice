@@ -27,7 +27,8 @@ let currentWordIndex = 0;
 // todo: submit function
 
 const submitBtn = document.getElementById('validate-current-word');
-submitBtn.addEventListener('click', () => {
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   const wordEnterByUser = document.getElementById('word-to-check').value;
   const currentWord = wordsToPlay[currentWordIndex];
   if (currentWord == wordEnterByUser) {
