@@ -24,7 +24,6 @@ let wordsToPlay = [];
 let currentWordIndex = 0;
 
 // todo: add shuffle button
-// todo: submit function
 
 const submitBtn = document.getElementById('validate-current-word');
 submitBtn.addEventListener('click', (e) => {
@@ -32,13 +31,12 @@ submitBtn.addEventListener('click', (e) => {
   const wordEnterByUser = document.getElementById('word-to-check').value;
   const currentWord = wordsToPlay[currentWordIndex];
   if (currentWord == wordEnterByUser) {
-    alert("That's right spelling 🥳");
+    alert("That's correct. ✅ Good job!");
   } else {
-    alert("That's wrong spelling. Please try again 💐");
+    alert("That's incorrect. ❌ Let's try again");
   }
 });
 
-// todo: submit on Enter
 // todo: show answer after submit
 // todo: scoring
 // todo: filter words
