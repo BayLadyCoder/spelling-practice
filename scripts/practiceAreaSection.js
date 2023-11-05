@@ -63,7 +63,7 @@ submitButton.addEventListener('click', (e) => {
   const currentWordIndex = getCurrentWordIndex();
 
   if (!inputText.value) {
-    return;
+    return alert('Please type something.');
   }
   if (inputText.value === selectedWordList[currentWordIndex]) {
     alert("That's correct. ✅ Good job!");
