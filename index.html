@@ -13,14 +13,25 @@
     <title>Spelling Practice for the Naturalization Test</title>
   </head>
   <body>
-    <h1>Spelling Practice for the Naturalization Test</h1>
-    <h2>Choose a category</h2>
-    <div id="category-list"></div>
-    <hr />
+    <!-- NAV BAR START -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"
+          >Spelling Practice for the Naturalization Tests</a
+        >
+      </div>
+    </nav>
+    <!-- NAV BAR END -->
+
+    <section class="pt-4" id="choose-category-section">
+      <h2 class="h3">Choose a category</h2>
+      <div id="category-list"></div>
+      <hr />
+    </section>
 
     <section id="practice-area-section">
-      <h2 id="selected-topic"></h2>
-      <h2 id="word-info"></h2>
+      <h3 class="h4" id="selected-topic"></h3>
+      <p class="h5" id="word-info"></p>
       <div>
         <button id="prev-btn" class="btn btn-warning" disabled><<</button>
         <button id="play-btn" class="btn btn-warning">Play</button>
@@ -41,7 +52,7 @@
 
       <br />
       <section id="voice-option-section">
-        <h2>Voice Options</h2>
+        <h2 class="h5">Voice Options</h2>
         <select id="voice-select" class="form-select"></select>
       </section>
     </section>
