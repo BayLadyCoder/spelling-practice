@@ -1,9 +1,11 @@
+import { wordsByCategory } from './data.js';
+
 // GLOBAL VARIABLES
 
 export const utterance = new SpeechSynthesisUtterance();
 
 // =============== selectedWordList ===============
-let selectedWordList = [];
+let selectedWordList = wordsByCategory.People;
 
 export const setSelectedWordList = (newSelectedWordList) => {
   selectedWordList = newSelectedWordList;
@@ -21,3 +23,19 @@ export const setCurrentWordIndex = (newWordIndex) => {
 export const getCurrentWordIndex = () => {
   return currentWordIndex;
 };
+
+// =============== selectedCategory ===============
+let selectedCategory = 'People';
+
+export const setSelectedCategory = (newCategory) => {
+  selectedCategory = newCategory;
+};
+export const getSelectedCategory = () => {
+  return selectedCategory;
+};
+
+const selectedTopic = document.getElementById('selected-topic');
+const wordInfo = document.getElementById('word-info');
+
+selectedTopic.textContent = `Category: ${selectedCategory}`;
+wordInfo.textContent = `1/${selectedWordList.length}`;
