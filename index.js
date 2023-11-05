@@ -25,10 +25,10 @@ let currentWordIndex = 0;
 
 // todo: add shuffle button
 
-const submitBtn = document.getElementById('validate-current-word');
+const submitBtn = document.getElementById('submit-btn');
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
-  const wordEnterByUser = document.getElementById('word-to-check').value;
+  const wordEnterByUser = document.getElementById('input-text').value;
   const currentWord = wordsToPlay[currentWordIndex];
   if (currentWord == wordEnterByUser) {
     alert("That's correct. ✅ Good job!");
