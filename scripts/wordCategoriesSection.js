@@ -13,7 +13,7 @@ Object.entries(wordsByCategory).forEach(([group, wordList]) => {
   const button = document.createElement('button');
   button.textContent = group;
   button.classList.add('btn');
-  button.classList.add('btn-outline-light');
+  button.classList.add('btn-dark');
 
   categoryList.appendChild(button);
 
@@ -21,9 +21,10 @@ Object.entries(wordsByCategory).forEach(([group, wordList]) => {
   button.addEventListener('click', () => {
     selectedTopic.textContent = `Category: ${group}`;
     practiceAreaSection.style.display = 'block';
-    setSelectedWordList(wordList);
-    setCurrentWordIndex(0);
     wordInfo.textContent = `1/${wordList.length}`;
     prevButton.disabled = true;
+
+    setSelectedWordList(wordList);
+    setCurrentWordIndex(0);
   });
 });
