@@ -16,6 +16,9 @@ const playButton = document.getElementById('play-btn');
 const prevButton = document.getElementById('prev-btn');
 const nextButton = document.getElementById('next-btn');
 
+// form
+const submitButton = document.getElementById('submit-btn');
+
 // Set up some initial values
 practiceArea.style.display = 'none';
 prevButton.disabled = true;
@@ -23,24 +26,21 @@ prevButton.disabled = true;
 let wordsToPlay = [];
 let currentWordIndex = 0;
 
-// todo: add shuffle button
-
-const submitBtn = document.getElementById('submit-btn');
-submitBtn.addEventListener('click', (e) => {
+submitButton.addEventListener('click', (e) => {
   e.preventDefault();
-  const wordEnterByUser = document.getElementById('input-text').value;
-  const currentWord = wordsToPlay[currentWordIndex];
-  if (currentWord == wordEnterByUser) {
+  const inputTextValue = document.getElementById('input-text').value;
+
+  if (inputTextValue === wordsToPlay[currentWordIndex]) {
     alert("That's correct. ✅ Good job!");
   } else {
     alert("That's incorrect. ❌ Let's try again");
   }
 });
 
+// todo: add shuffle button
 // todo: show answer after submit
 // todo: scoring
 // todo: filter words
-// todo: styling
 // todo: mobile responsive
 // todo: highlight selected category
 // todo: clean up and organize code
