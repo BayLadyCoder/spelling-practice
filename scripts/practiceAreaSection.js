@@ -58,13 +58,19 @@ const submitButton = document.getElementById('submit-btn');
 
 submitButton.addEventListener('click', (e) => {
   e.preventDefault();
-  const inputTextValue = document.getElementById('input-text').value;
+  const inputText = document.getElementById('input-text');
   const selectedWordList = getSelectedWordList();
   const currentWordIndex = getCurrentWordIndex();
 
-  if (inputTextValue === selectedWordList[currentWordIndex]) {
+  if (!inputText.value) {
+    return;
+  }
+  if (inputText.value === selectedWordList[currentWordIndex]) {
     alert("That's correct. ✅ Good job!");
   } else {
     alert("That's incorrect. ❌ Let's try again");
   }
+
+  // reset input field
+  inputText.value = '';
 });
