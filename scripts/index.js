@@ -34,6 +34,7 @@ export const getSelectedCategory = () => {
   return selectedCategory;
 };
 
+// Set up initial values on app starts
 const selectedTopic = document.getElementById('selected-topic');
 const wordInfo = document.getElementById('word-info');
 
