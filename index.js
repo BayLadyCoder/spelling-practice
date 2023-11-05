@@ -19,10 +19,6 @@ const nextButton = document.getElementById('next-btn');
 // form
 const submitButton = document.getElementById('submit-btn');
 
-// Set up some initial values
-practiceArea.style.display = 'none';
-prevButton.disabled = true;
-
 let wordsToPlay = [];
 let currentWordIndex = 0;
 
