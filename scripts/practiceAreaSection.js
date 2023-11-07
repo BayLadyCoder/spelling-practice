@@ -61,14 +61,16 @@ submitButton.addEventListener('click', (e) => {
   const inputText = document.getElementById('input-text');
   const selectedWordList = getSelectedWordList();
   const currentWordIndex = getCurrentWordIndex();
+  const currentWord = selectedWordList[currentWordIndex];
+  const result = `\n\nYou entered: ${inputText.value} \nAnswer: ${currentWord}`;
 
   if (!inputText.value) {
     return alert('Please type something.');
   }
-  if (inputText.value === selectedWordList[currentWordIndex]) {
-    alert("That's correct. ✅ Good job!");
+  if (inputText.value === currentWord) {
+    alert(`That's correct. ✅ Good job! ${result}`);
   } else {
-    alert("That's incorrect. ❌ Let's try again");
+    alert(`That's incorrect. ❌ Let's try again. ${result}`);
   }
 
   // reset input field
