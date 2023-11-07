@@ -9,6 +9,7 @@ const playButton = document.getElementById('play-btn');
 const prevButton = document.getElementById('prev-btn');
 const nextButton = document.getElementById('next-btn');
 const wordInfo = document.getElementById('word-info');
+const result = document.getElementById('result');
 
 // ============ START Play, Prev, Next buttons ============
 playButton.addEventListener('click', () => {
@@ -62,15 +63,18 @@ submitButton.addEventListener('click', (e) => {
   const selectedWordList = getSelectedWordList();
   const currentWordIndex = getCurrentWordIndex();
   const currentWord = selectedWordList[currentWordIndex];
-  const result = `\n\nYou entered: ${inputText.value} \nAnswer: ${currentWord}`;
 
   if (!inputText.value) {
-    return alert('Please type something.');
+    result.textContent = '❗️Please type something.';
+    return;
   }
+
+  const answer = `You entered: ${inputText.value}, Answer: ${currentWord}`;
+
   if (inputText.value === currentWord) {
-    alert(`That's correct. ✅ Good job! ${result}`);
+    result.textContent = `✅ ${answer}`;
   } else {
-    alert(`That's incorrect. ❌ Let's try again. ${result}`);
+    result.textContent = `❌ ${answer}`;
   }
 
   // reset input field
