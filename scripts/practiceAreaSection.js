@@ -11,13 +11,17 @@ const nextButton = document.getElementById('next-btn');
 const wordInfo = document.getElementById('word-info');
 const result = document.getElementById('result');
 
-// ============ START Play, Prev, Next buttons ============
-playButton.addEventListener('click', () => {
+const playCurrentWord = () => {
   const selectedWordList = getSelectedWordList();
   const currentWordIndex = getCurrentWordIndex();
 
   utterance.text = selectedWordList[currentWordIndex];
   window.speechSynthesis.speak(utterance);
+};
+
+// ============ START Play, Prev, Next buttons ============
+playButton.addEventListener('click', () => {
+  playCurrentWord();
 });
 
 prevButton.addEventListener('click', () => {
@@ -30,6 +34,7 @@ prevButton.addEventListener('click', () => {
 
   wordInfo.textContent = `${newWordIndex + 1}/${selectedWordList.length}`;
   setCurrentWordIndex(newWordIndex);
+  playCurrentWord();
 
   if (newWordIndex === 0) {
     prevButton.disabled = true;
@@ -47,6 +52,7 @@ nextButton.addEventListener('click', () => {
 
   wordInfo.textContent = `${newWordIndex + 1}/${selectedWordList.length}`;
   setCurrentWordIndex(newWordIndex);
+  playCurrentWord();
 
   if (newWordIndex === selectedWordList.length - 1) {
     nextButton.disabled = true;
