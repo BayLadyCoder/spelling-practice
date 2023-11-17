@@ -40,3 +40,10 @@ const wordInfo = document.getElementById('word-info');
 
 selectedTopic.textContent = `Category: ${selectedCategory}`;
 wordInfo.textContent = `1/${selectedWordList.length}`;
+
+const tooltipTriggerList = document.querySelectorAll(
+  '[data-bs-toggle="tooltip"]'
+);
+tooltipTriggerList.forEach(
+  (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+);
