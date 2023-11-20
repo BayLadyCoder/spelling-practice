@@ -11,6 +11,7 @@ const wordInfo = document.getElementById('word-info');
 const selectedTopic = document.getElementById('selected-topic');
 const practiceAreaSection = document.getElementById('practice-area-section');
 const prevButton = document.getElementById('prev-btn');
+const nextButton = document.getElementById('next-btn');
 
 // Set up category list
 Object.entries(wordsByCategory).forEach(([categoryName, wordList], index) => {
@@ -49,5 +50,6 @@ Object.entries(wordsByCategory).forEach(([categoryName, wordList], index) => {
     setSelectedCategory(categoryName);
     setSelectedWordList(wordList);
     setCurrentWordIndex(0);
+    nextButton.disabled = false;
   });
 });
