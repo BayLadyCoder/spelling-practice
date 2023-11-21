@@ -9,7 +9,6 @@ import {
 const categoryList = document.getElementById('category-list');
 const wordInfo = document.getElementById('word-info');
 const selectedTopic = document.getElementById('selected-topic');
-const practiceAreaSection = document.getElementById('practice-area-section');
 const prevButton = document.getElementById('prev-btn');
 const nextButton = document.getElementById('next-btn');
 
